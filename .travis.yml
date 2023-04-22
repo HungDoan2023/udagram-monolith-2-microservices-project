@@ -17,13 +17,6 @@ script:
   - docker --version
   - docker-compose -f docker-compose-build.yaml build --parallel
 
-# Tagging
-  - echo "tagging..."
-  - docker tag udagram-api-user hungdoan2023/udagram-api-user
-  - docker tag udagram-api-feed hungdoan2023/udagram-api-feed
-  - docker tag udagram-reverseproxy hungdoan2023/udagram-reverseproxy
-  - docker tag udagram-frontend hungdoan2023/udagram-frontend
-
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
