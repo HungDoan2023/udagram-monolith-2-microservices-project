@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: filter-images-s3-db
+  AWS_PROFILE: default
+  AWS_REGION: us-east-2
+  JWT_SECRET: testing
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: database-1.c3wrcgsa690y.us-east-2.rds.amazonaws.com
+  URL: localhost:8100
+metadata:
+  name: env-config
