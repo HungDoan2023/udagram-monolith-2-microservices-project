@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: udagram-frontend
+  name: frontend
   labels:
-    app: udagram-frontend
+    app: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: udagram-frontend
+      app: frontend
   template:
     metadata:
       labels:
-        app: udagram-frontend
+        app: frontend
         api: external
     spec:
       containers:
-      - name: udagram-frontend
+      - name: frontend
         image: hungdoan2023/udagram-frontend:latest
         imagePullPolicy: Always  
         resources:
