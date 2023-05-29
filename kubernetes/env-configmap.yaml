@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  AWS_BUCKET: filter-images-s3-db
+  AWS_BUCKET: filter-image-s3-db
   AWS_PROFILE: default
   AWS_REGION: us-east-2
   JWT_SECRET: testing
