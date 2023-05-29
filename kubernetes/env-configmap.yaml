@@ -7,6 +7,6 @@ data:
   JWT_SECRET: testing
   POSTGRES_DB: postgres
   POSTGRES_HOST: database-1.c3wrcgsa690y.us-east-2.rds.amazonaws.com
-  URL: http://a1dc08c690d0744e4ae088572eb1a390-1026690886.us-east-2.elb.amazonaws.com:8100
+  URL: http://a426d3d999e614b56ab6e4a650dce71c-283033933.us-east-2.elb.amazonaws.com:8100
 metadata:
   name: env-config
