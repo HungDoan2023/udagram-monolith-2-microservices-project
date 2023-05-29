@@ -3,7 +3,7 @@ services:
   reverseproxy:
     build:
       context: ./udagram-reverseproxy
-    image: hungdoan2023/udagram-reverseproxy
+    image: hungdoan2023/udagram-reverseproxy:latest
   backend_user:
     build:
       context: ./udagram-api-user
@@ -11,8 +11,8 @@ services:
   backend_feed:
     build:
       context: ./udagram-api-feed
-    image: hungdoan2023/udagram-api-feed
+    image: hungdoan2023/udagram-api-feed:latest
   frontend:
     build:
       context: ./udagram-frontend
-    image: hungdoan2023/udagram-frontend
+    image: hungdoan2023/udagram-frontend:latest
