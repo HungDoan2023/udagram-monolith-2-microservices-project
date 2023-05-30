@@ -13,8 +13,21 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
   }
 
   const tokenBearer = req.headers.authorization.split(' ');
-  if (tokenBearer.length != 2) {
-    return res.status(401).send({message: 'Malformed token.'});
+  if (tokenBearer.length != 2) {    
+    const tokenBearers = req.headers.authorization.Split(',');
+    tokenBearers.forEach(item => {
+      const tokenBearer = item.Split(' ')[1];
+      if (tokenBearer !== null) {
+        return jwt.verify(token, c.config.jwt.secret, (err, decoded) => {
+          if (err) {
+            return res.status(500).send({auth: false, message: 'Failed to authenticate.'});
+          }
+          return next();
+        });
+      } else {
+        return;
+      }
+    });
   }
 
   const token = tokenBearer[1];
@@ -47,7 +60,7 @@ router.get('/:id',
 
 // Get a signed url to put a new item in the bucket
 router.get('/signed-url/:fileName',
-    requireAuth,
+    // requireAuth,
     async (req: Request, res: Response) => {
       const {fileName} = req.params;
       const url = AWS.getPutSignedUrl(fileName);
