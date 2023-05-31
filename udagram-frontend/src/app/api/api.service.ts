@@ -25,8 +25,8 @@ export class ApiService {
   static extractData(res: HttpEvent<any>) {
     const bucket = "filter.image-s3-db";
     const subdomain = res.substring(7);
-    const body = `https://${bucket}.${subdomain}` || {};
-    console.log(`s3 url: ${body}`);
+    const body = `https://${bucket}.${subdomain}`;
+    console.debug(`s3 url: ${body}`);
     return body || { };
   }
 
