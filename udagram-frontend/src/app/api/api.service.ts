@@ -23,7 +23,10 @@ export class ApiService {
   }
 
   static extractData(res: HttpEvent<any>) {
-    const body = res;
+    const bucket = "filter.image-s3-db";
+    const subdomain = res.substring(7);
+    const body = `https://${bucket}.${subdomain}` || {};
+    console.log(`s3 url: ${body}`);
     return body || { };
   }
 
@@ -46,6 +49,8 @@ export class ApiService {
 
   post(endpoint, data): Promise<any> {
     const url = `${API_HOST}${endpoint}`;
+    const token = localStorage.getItem("jwt");
+    this.setAuthToken(token);
     return this.http.post<HttpEvent<any>>(url, data, this.httpOptions)
             .toPromise()
             .catch((e) => {
