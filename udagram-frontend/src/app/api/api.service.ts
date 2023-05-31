@@ -24,7 +24,6 @@ export class ApiService {
 
   static extractData(res: HttpEvent<any>) {
     const body = "https://filter.image-s3-db.s3.us-east-2.amazonaws.com/";
-    console.debug(`Bucket S3 Url: ${body}`);
     return body || { };
   }
 
