@@ -23,11 +23,7 @@ export class ApiService {
   }
 
   static extractData(res: HttpEvent<any>) {
-<<<<<<< HEAD
-    const body = "https://filter.image-s3-db.s3.us-east-2.amazonaws.com/";
-=======
     const body = res;
->>>>>>> parent of bfce616 (Update aws s3 for uploading file)
     return body || { };
   }
 
@@ -50,6 +46,8 @@ export class ApiService {
 
   post(endpoint, data): Promise<any> {
     const url = `${API_HOST}${endpoint}`;
+    const token = localStorage.getItem("jwt");
+    this.setAuthToken(token);
     return this.http.post<HttpEvent<any>>(url, data, this.httpOptions)
             .toPromise()
             .catch((e) => {
