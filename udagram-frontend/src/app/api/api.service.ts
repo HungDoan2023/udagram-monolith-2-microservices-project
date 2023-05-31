@@ -4,7 +4,6 @@ import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 
 const API_HOST = environment.apiHost;
-const JWT_LOCALSTORE_KEY = 'jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -56,9 +55,8 @@ export class ApiService {
   }
 
   async upload(endpoint: string, file: File, payload: any): Promise<any> {
-    const token = localStorage.getItem(JWT_LOCALSTORE_KEY);
     const signed_url = (await this.get(`${endpoint}/signed-url/${file.name}`)).url;
-    const headers = new HttpHeaders({'Content-Type': file.type, 'Authorization': `jwt ${token}`});    
+    const headers = new HttpHeaders({'Content-Type': file.type});    
     const req = new HttpRequest( 'PUT', signed_url, file,
                                   {
                                     headers: headers,
