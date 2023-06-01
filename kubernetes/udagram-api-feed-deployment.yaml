@@ -18,8 +18,8 @@ spec:
       - name: backend-feed
         image: hungdoan2023/udagram-api-feed:latest
         ports:
-          - containerPort: 8080
-        imagePullPolicy: Always  
+        - containerPort: 8080
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "1024Mi"
@@ -76,12 +76,12 @@ spec:
             configMapKeyRef:
               name: env-config
               key: URL
+        volumeMounts:
+        - name: aws-secret
+          mountPath: "/root/.aws/"
+          readOnly: true
+      restartPolicy: Always
       volumes:
       - name: aws-secret
         secret:
           secretName: aws-secret
-      volumeMounts:
-      - name: aws-secret
-        mountPath: "/root/.aws/"
-        readOnly: true
-      restartPolicy: Always
