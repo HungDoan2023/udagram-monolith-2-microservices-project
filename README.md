@@ -39,15 +39,18 @@ EKS Compute
 ![EKS Compute](./screenshots/eks-compute.PNG)
 EKS Configuration
 ![EKS Configuration](./screenshots/eks-compute-nodegroup-configuration.PNG)
+
 4/ Create & Setting Travis for Build source code on Github repository
 Travis Configuration
 ![Travis Configuration](./screenshots/travis-variable-environment.PNG)
 Travis Build Successfull
 ![Travis Build Successfully](./screenshots/travis-build-successfully.PNG)
 ![Travis Build History](./screenshots/travis-build-history.PNG)
+
 5/ Built Images On Docker Hub
 Built Images on Docker Hub
 ![Built Images Repository](./screenshots/docker-hub-repositories.PNG)
+
 6/ Structure Udagram Application with Microservice Architecture
 Microservice Architecture
 ![Microservice Architecture](./screenshots/microservice-architecture.PNG)
@@ -61,6 +64,7 @@ FrontEnd
 ![Source File Structure](./screenshots/udagram-frontend-source-file-structure.PNG)
 ReverseProxy Server
 ![Source File Structure](./screenshots/reverseproxy-source-file-structure.PNG)
+
 7/ Deployment Application with Amazon Elastic Kubernetes Service
 Deployment Flow with Elastic Kubernetes Service & Docker
 ![Build Flow with Docker](./screenshots/docker-image-and-kubernetes-pods.PNG)
@@ -126,6 +130,7 @@ kubectl delete deployment reverseproxy
 
 9/ Demo Udagram Application
 GUI Udagram Application
+Access to the http://a426d3d999e614b56ab6e4a650dce71c-283033933.us-east-2.elb.amazonaws.com/ link, create a new account and upload image
 !['GUI Udagram Application'](./screenshots/demo-udagram-application.PNG)
 
 10/ Debugging, Monitoring and Logging
